@@ -47,16 +47,25 @@ body {
     display: flex;
     align-items: center;
     flex: 0 0 auto;
+    min-width: 0;
 }
 
 .logo-image {
     display: block;
+    width: clamp(150px, 14vw, 190px);
     height: auto;
-    width: clamp(172px, 16vw, 220px);
-    max-height: 74px;
+    max-height: none;
     object-fit: contain;
-    object-position: center;
+    object-position: left center;
     flex-shrink: 0;
+}
+
+.nav-brand .logo,
+.nav-brand .brand-text,
+.nav-brand .logo-text,
+.hero-logo,
+.hero-logo-image {
+    display: none;
 }
 
 .nav-links {
@@ -851,7 +860,7 @@ section:not(#hero) {
     }
 
     .logo-image {
-        width: 190px;
+        width: 165px;
     }
 
     .nav-links {
