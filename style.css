@@ -709,13 +709,14 @@ section:not(#hero) {
     }
 
     .nav-links {
-        gap: 1.5rem;
+        gap: 1rem;
         flex-wrap: wrap;
         justify-content: center;
     }
 
     #hero h2 {
-        font-size: 2.2rem;
+        font-size: 2.25rem;
+        line-height: 1.08;
     }
 
     #hero p {
@@ -759,9 +760,10 @@ section:not(#hero) {
     .language-banner {
         display: flex;
         flex-direction: column;
-        gap: 0.9rem;
+        gap: 0;
         min-height: 0;
-        padding: 0;
+        padding: 0 20px;
+        margin-bottom: 1.4rem;
     }
 
     .language-banner::before,
@@ -772,7 +774,9 @@ section:not(#hero) {
     .hero-badge {
         order: -1;
         width: 100%;
-        padding: 1.55rem 1.4rem;
+        max-width: 360px;
+        margin: 0 auto;
+        padding: 1.35rem 1.25rem;
     }
 
     .hero-badge span {
@@ -785,16 +789,23 @@ section:not(#hero) {
     }
 
     .language-phrase {
-        width: 100%;
+        display: none;
     }
 
     .hero-copy {
-        margin-top: 2.25rem;
+        margin-top: 1.4rem;
     }
 
     .cta-buttons {
         flex-direction: column;
         align-items: stretch;
+    }
+
+    /* Inserted after #hero p */
+    .hero-tag {
+        font-size: 0.78rem;
+        letter-spacing: 0.14em;
+        margin-bottom: 0.9rem;
     }
 
     .hero-stats {
