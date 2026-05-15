@@ -32,7 +32,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 20px;
+    padding: 1rem 20px;
     gap: 1.5rem;
 }
 
@@ -46,26 +46,17 @@ body {
 .nav-brand {
     display: flex;
     align-items: center;
-    gap: 0.9rem;
+    flex: 0 0 auto;
 }
 
 .logo-image {
-    height: 48px;
-    width: auto;
-}
-
-.hero-logo {
     display: block;
-    margin: 0 auto 1.5rem;
-    max-width: 260px;
-    width: 100%;
     height: auto;
-}
-
-.logo {
-    color: #003366;
-    font-size: 1.65rem;
-    font-weight: 700;
+    width: clamp(172px, 16vw, 220px);
+    max-height: 74px;
+    object-fit: contain;
+    object-position: center;
+    flex-shrink: 0;
 }
 
 .nav-links {
@@ -128,7 +119,7 @@ section {
         radial-gradient(circle at 84% 18%, rgba(22, 113, 121, 0.12), transparent 26%),
         #edf5fb;
     color: #1d2939;
-    padding: 5.25rem 0 2rem;
+    padding: 4.75rem 0 2.25rem;
     position: relative;
     overflow: hidden;
 }
@@ -140,7 +131,7 @@ section {
 
 .hero-tag {
     display: inline-block;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.1rem;
     color: #003366;
     font-size: 0.95rem;
     letter-spacing: 0.18em;
@@ -150,19 +141,19 @@ section {
 .hero-copy {
     text-align: center;
     max-width: 780px;
-    margin: 2.75rem auto 0;
+    margin: 2.35rem auto 0;
 }
 
 #hero h2 {
     font-size: 3.4rem;
     line-height: 1.05;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.35rem;
     color: #002851;
 }
 
 #hero p {
     font-size: 1.18rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.25rem;
     max-width: 720px;
     margin-left: auto;
     margin-right: auto;
@@ -175,12 +166,12 @@ section {
     display: grid;
     grid-template-columns: minmax(190px, 1fr) minmax(310px, 0.9fr) minmax(190px, 1fr);
     grid-template-rows: repeat(3, minmax(92px, auto));
-    gap: 1.35rem 2rem;
+    gap: 1.25rem 1.8rem;
     align-items: center;
     max-width: 1040px;
-    min-height: 360px;
+    min-height: 342px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1.6rem 2rem;
 }
 
 .language-banner::before {
@@ -210,7 +201,7 @@ section {
     width: min(100%, 430px);
     background: linear-gradient(145deg, #001f3f 0%, #003366 58%, #06436f 100%);
     color: white;
-    padding: 2rem 2.4rem;
+    padding: 1.85rem 2.35rem;
     border-radius: 999px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -237,7 +228,7 @@ section {
     position: relative;
     z-index: 1;
     width: min(100%, 320px);
-    padding: 1.15rem 1.3rem;
+    padding: 1.1rem 1.25rem;
     background-color: rgba(255, 255, 255, 0.9);
     border: 1px solid rgba(0, 51, 102, 0.12);
     border-radius: 8px;
@@ -288,7 +279,7 @@ section {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.25rem;
-    margin: 3rem auto 0;
+    margin: 2.75rem auto 0;
     max-width: 1000px;
     z-index: 1;
     position: relative;
@@ -852,6 +843,15 @@ section:not(#hero) {
         flex-direction: column;
         gap: 1.5rem;
         padding: 1rem 20px;
+    }
+
+    .nav-row {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .logo-image {
+        width: 190px;
     }
 
     .nav-links {
