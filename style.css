@@ -396,6 +396,122 @@ section {
     line-height: 1.7;
 }
 
+.card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    margin: 0 auto 1.2rem;
+    border-radius: 14px;
+    background-color: rgba(0, 102, 204, 0.08);
+    color: #0066cc;
+}
+
+.card-icon svg {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+#areas {
+    background-color: #f7f9fc;
+}
+
+#support {
+    background-color: #ffffff;
+}
+
+#standards {
+    background-color: #f8f9fa;
+}
+
+#closing-cta {
+    background-color: #eef5fb;
+}
+
+section:not(#hero) {
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem;
+    align-items: center;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.support-image {
+    min-height: 360px;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(0, 102, 204, 0.12), rgba(255, 255, 255, 0.96));
+}
+
+.support-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 20% 30%, rgba(0, 102, 204, 0.16), transparent 20%), radial-gradient(circle at 80% 20%, rgba(0, 51, 102, 0.1), transparent 15%);
+}
+
+.support-mark {
+    position: absolute;
+    display: block;
+    width: 148px;
+    height: 148px;
+    border: 1px solid rgba(0, 102, 204, 0.18);
+    border-radius: 999px;
+    top: 16%;
+    left: 12%;
+}
+
+.support-copy h2 {
+    text-align: left;
+    font-size: 2.4rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: #003366;
+}
+
+.support-copy p {
+    max-width: 700px;
+    margin-bottom: 2rem;
+    color: #505f74;
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+.support-buttons .btn {
+    padding: 0.95rem 1.85rem;
+}
+
+#closing-cta {
+    padding: 4rem 0;
+}
+
+#closing-cta .container {
+    max-width: 900px;
+}
+
+#closing-cta h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #003366;
+    font-size: 2.6rem;
+    font-weight: 700;
+}
+
+#closing-cta p {
+    max-width: 760px;
+    margin: 0 auto 2rem;
+    color: #4f5b6d;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
 .service-card ul {
     margin-top: 1rem;
     padding-left: 1.15rem;
