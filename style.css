@@ -44,19 +44,25 @@ body {
 }
 
 .nav-brand {
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     flex: 0 0 auto;
     min-width: 0;
+    padding: 0.42rem 0.55rem;
+    background: linear-gradient(145deg, #17231d 0%, #20382a 100%);
+    border: 1px solid rgba(127, 189, 120, 0.38);
+    border-radius: 4px;
+    box-shadow: 0 8px 22px rgba(0, 34, 20, 0.12);
 }
 
 .logo-image {
     display: block;
-    width: clamp(150px, 14vw, 190px);
+    width: clamp(190px, 18vw, 250px);
     height: auto;
     max-height: none;
     object-fit: contain;
-    object-position: left center;
+    object-position: center;
     flex-shrink: 0;
 }
 
@@ -173,14 +179,14 @@ section {
 .language-banner {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(190px, 1fr) minmax(310px, 0.9fr) minmax(190px, 1fr);
-    grid-template-rows: repeat(3, minmax(92px, auto));
-    gap: 1.25rem 1.8rem;
+    grid-template-columns: minmax(190px, 1fr) minmax(340px, 0.95fr) minmax(190px, 1fr);
+    grid-template-rows: repeat(3, minmax(96px, auto));
+    gap: 1.2rem 1.65rem;
     align-items: center;
     max-width: 1040px;
-    min-height: 342px;
+    min-height: 356px;
     margin: 0 auto;
-    padding: 1.6rem 2rem;
+    padding: 1.65rem 2rem;
 }
 
 .language-banner::before {
@@ -207,29 +213,29 @@ section {
     grid-column: 2;
     grid-row: 2;
     justify-self: center;
-    width: min(100%, 430px);
-    background: linear-gradient(145deg, #001f3f 0%, #003366 58%, #06436f 100%);
+    width: min(100%, 460px);
+    background: linear-gradient(145deg, #17231d 0%, #20382a 52%, #113d48 100%);
     color: white;
-    padding: 1.85rem 2.35rem;
-    border-radius: 999px;
+    padding: 1.15rem 1.45rem 1.2rem;
+    border-radius: 14px;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 24px 55px rgba(0, 45, 91, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(127, 189, 120, 0.36);
+    box-shadow: 0 24px 55px rgba(0, 45, 91, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.16);
 }
 
-.hero-badge span {
+.hero-brand-logo {
     display: block;
-    font-size: 1.38rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
+    width: min(100%, 360px);
+    height: auto;
+    margin: 0 auto;
 }
 
 .hero-badge small {
     display: block;
-    margin-top: 0.5rem;
-    color: #cfdaf1;
-    font-size: 0.98rem;
-    letter-spacing: 0.08em;
+    margin-top: 0.4rem;
+    color: #dceee0;
+    font-size: 0.86rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
 }
 
@@ -860,7 +866,7 @@ section:not(#hero) {
     }
 
     .logo-image {
-        width: 165px;
+        width: 210px;
     }
 
     .nav-links {
@@ -922,11 +928,16 @@ section:not(#hero) {
     .hero-badge {
         order: -1;
         width: 100%;
-        padding: 1.55rem 1.4rem;
+        padding: 1.1rem 1.2rem 1.2rem;
     }
 
-    .hero-badge span {
-        font-size: 1.12rem;
+    .hero-brand-logo {
+        width: min(100%, 310px);
+    }
+
+    .hero-badge small {
+        font-size: 0.76rem;
+        letter-spacing: 0.1em;
     }
 
     .language-phrase {
