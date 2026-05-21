@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lan Do &amp; Associates — Language Services / Index</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafaf6;
+    --bg-2: #f2f1ec;
+    --ink: #08080a;
+    --ink-soft: #4a4a4d;
+    --ink-mute: #8b8b8e;
+    --rule: #08080a;
+    --rule-soft: rgba(8,8,10,0.12);
+    --accent: #0033ff;
+    --accent-hot: #ff5a1f;
+  }
+  * { box-sizing: border-box; margin:0; padding:0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+    font-variation-settings: "wdth" 95, "opsz" 14;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+  }
+  body::before {
+    content:"";
+    position: fixed; inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(8,8,10,0.035) 1px, transparent 1px);
+    background-size: calc(100vw/12) 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .container { width: min(1320px, 94vw); margin: 0 auto; position: relative; z-index: 2; }
+  a { color: inherit; }
+  ::selection { background: var(--accent); color: #fff; }
+
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* TOP BAR */
+  .topbar {
+    border-bottom: 1px solid var(--rule);
+    background: var(--bg);
+    padding: 8px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .topbar-inner { display:flex; justify-content: space-between; gap: 24px; color: var(--ink-soft); }
+  .topbar-inner .live::before {
+    content: "●"; color: var(--accent-hot); margin-right: 6px;
+    animation: blink 2s infinite;
+  }
+  @keyframes blink { 50% { opacity: 0.3; } }
+
+  /* NAV */
+  nav.main {
+    border-bottom: 1px solid var(--rule);
+    background: var(--bg);
+    position: sticky; top: 0; z-index: 30;
+  }
+  .nav-grid {
+    display:grid; grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 20px 0;
+  }
+  .nav-brand img { height: 44px; display:block; }
+  .nav-mid {
+    display:flex; justify-content: center; gap: 32px;
+    list-style: none;
+  }
+  .nav-mid a {
+    text-decoration: none;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--ink);
+    font-variation-settings: "wdth" 95;
+    position: relative;
+  }
+  .nav-mid a::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -4px;
+    height: 2px; background: var(--accent);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 240ms ease;
+  }
+  .nav-mid a:hover::after { transform: scaleX(1); }
+  .nav-end { display:flex; gap: 8px; justify-content: flex-end; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    text-decoration: none;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-variation-settings: "wdth" 95;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 11px 18px;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    transition: all 200ms;
+    background: var(--bg);
+  }
+  .btn:hover { background: var(--ink); color: var(--bg); }
+  .btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .btn.primary:hover { background: var(--ink); border-color: var(--ink); }
+  .btn .arrow { font-family: 'JetBrains Mono', monospace; }
+
+  /* HERO */
+  .hero {
+    border-bottom: 1px solid var(--rule);
+    padding: 70px 0 0;
+    position: relative;
+  }
+  .hero-grid {
+    display:grid; grid-template-columns: 2fr 4fr 2fr;
+    gap: 32px;
+    align-items: start;
+    padding-bottom: 40px;
+  }
+  .hero-meta { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--ink-soft); line-height: 1.7; }
+  .hero-meta .label { color: var(--accent-hot); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; display: block; }
+  .hero-meta strong {
+    display:block; font-family: 'Newsreader', serif;
+    font-style: italic; font-weight: 500; font-size: 17px;
+    color: var(--ink); margin-top: 6px; letter-spacing: 0; text-transform: none;
+  }
+  .hero-center .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px; color: var(--accent-hot);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hero-center .num::after { content:""; flex-grow: 1; height: 1px; background: var(--rule-soft); }
+  .hero-center h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-variation-settings: "wdth" 80, "opsz" 96;
+    font-weight: 600;
+    font-size: clamp(64px, 11vw, 168px);
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+    margin-bottom: 24px;
+  }
+  .hero-center h1 .italic {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-variation-settings: normal;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+  }
+  .hero-center .lede {
+    font-size: 19px;
+    line-height: 1.5;
+    max-width: 560px;
+    color: var(--ink-soft);
+  }
+  .hero-center .lede strong { color: var(--ink); font-weight: 500; }
+  .hero-actions { margin-top: 24px; display:flex; gap: 10px; flex-wrap: wrap; }
+
+  /* phrase rail */
+  .phrases {
+    border-top: 1px solid var(--rule);
+    display:grid; grid-template-columns: 80px repeat(4, 1fr);
+    align-items: stretch;
+  }
+  .phrases .rail {
+    background: var(--ink); color: var(--bg);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: center;
+    padding: 18px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+  }
+  .ph {
+    padding: 24px 28px;
+    border-right: 1px solid var(--rule-soft);
+    position: relative;
+  }
+  .ph:last-child { border-right: 0; }
+  .ph .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--accent-hot);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 12px;
+    display: flex; justify-content: space-between;
+  }
+  .ph .native {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-variation-settings: "wdth" 80;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .ph .gloss {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 14.5px;
+    color: var(--ink-soft);
+  }
+
+  /* HERO STATS */
+  .stats {
+    border-top: 1px solid var(--rule);
+    display:grid; grid-template-columns: repeat(3, 1fr);
+  }
+  .stat {
+    padding: 36px 28px 32px;
+    border-right: 1px solid var(--rule-soft);
+    position: relative;
+  }
+  .stat:last-child { border-right: 0; }
+  .stat .ix {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    color: var(--accent-hot);
+    margin-bottom: 16px;
+  }
+  .stat .num {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-variation-settings: "wdth" 75, "opsz" 96;
+    font-weight: 600;
+    font-size: clamp(72px, 9vw, 144px);
+    line-height: 0.9;
+    letter-spacing: -0.045em;
+  }
+  .stat .num em {
+    font-family: 'Newsreader', serif;
+    font-style: italic; font-weight: 400;
+    color: var(--accent);
+    font-variation-settings: normal;
+    letter-spacing: -0.02em;
+  }
+  .stat .label {
+    margin-top: 12px;
+    max-width: 320px;
+    font-size: 15.5px;
+    color: var(--ink-soft);
+  }
+
+  /* SECTIONS */
+  section { padding: 96px 0; border-bottom: 1px solid var(--rule); position: relative; }
+  .sec-head {
+    display:grid; grid-template-columns: 80px 1fr 1fr;
+    gap: 24px; align-items: end;
+    margin-bottom: 56px;
+  }
+  .sec-head .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    color: var(--accent-hot);
+    letter-spacing: 0.1em;
+    border-top: 1px solid var(--rule);
+    padding-top: 8px;
+  }
+  .sec-head h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-variation-settings: "wdth" 80, "opsz" 96;
+    font-weight: 600;
+    font-size: clamp(44px, 6vw, 88px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+  }
+  .sec-head h2 em {
+    font-family: 'Newsreader', serif; font-style: italic; font-weight: 400;
+    color: var(--accent); font-variation-settings: normal;
+  }
+  .sec-head .descr {
+    color: var(--ink-soft); font-size: 17px;
+    max-width: 380px; margin-left: auto;
+    border-top: 1px solid var(--rule);
+    padding-top: 8px;
+  }
+  .sec-head .descr .mono { display: block; color: var(--accent-hot); margin-bottom: 6px; }
+
+  /* SERVICES */
+  .services {
+    display:grid; grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  }
+  .svc {
+    padding: 36px 28px 28px;
+    border-right: 1px solid var(--rule-soft);
+    position: relative;
+    transition: background 200ms;
+  }
+  .svc:last-child { border-right: 0; }
+  .svc:hover { background: var(--bg-2); }
+  .svc .meta {
+    display:flex; justify-content: space-between;
+    margin-bottom: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: 0.08em;
+  }
+  .svc .meta .num { color: var(--accent-hot); }
+  .svc .ico {
+    color: var(--accent);
+    margin-bottom: 22px;
+  }
+  .svc h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-variation-settings: "wdth" 90;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+    max-width: 14ch;
+  }
+  .svc p { color: var(--ink-soft); font-size: 16px; }
+  .svc .footnote {
+    margin-top: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    color: var(--ink-mute);
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 12px;
+  }
+
+  /* ABOUT */
+  .about-block {
+    display:grid; grid-template-columns: 1fr 2fr;
+    gap: 48px;
+  }
+  .about-block .index {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    line-height: 1.8;
+  }
+  .about-block .index span { display: block; }
+  .about-block .index .accent { color: var(--accent-hot); margin-top: 16px; }
+  .about-block .body p {
+    font-size: 19px;
+    margin-bottom: 22px;
+    line-height: 1.55;
+  }
+  .about-block .body p strong {
+    font-weight: 500;
+    background: linear-gradient(transparent 60%, rgba(0,51,255,0.18) 60%);
+    padding: 0 2px;
+  }
+  .about-block .body .pull {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.25;
+    color: var(--accent);
+    border-left: 4px solid var(--accent);
+    padding: 4px 0 4px 22px;
+    margin: 36px 0;
+    max-width: 28ch;
+  }
+
+  /* STANDARDS */
+  .standards {
+    display:grid; grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--rule);
+    margin-bottom: 36px;
+  }
+  .std {
+    padding: 36px 28px;
+    border-right: 1px solid var(--rule-soft);
+    position: relative;
+  }
+  .std:last-child { border-right: 0; }
+  .std .meta {
+    display:flex; justify-content: space-between; align-items: center;
+    margin-bottom: 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: 0.08em;
+  }
+  .std .num {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-variation-settings: "wdth" 75, "opsz" 96;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 0.9;
+    color: var(--accent);
+    letter-spacing: -0.04em;
+    margin-bottom: 12px;
+  }
+  .std h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 12px;
+    letter-spacing: -0.015em;
+  }
+  .std p { color: var(--ink-soft); font-size: 15.5px; }
+
+  .trust {
+    display:grid; grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--rule);
+  }
+  .trust div {
+    padding: 18px 24px;
+    border-right: 1px solid var(--rule-soft);
+    display:flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .trust div:last-child { border-right: 0; }
+  .trust div::after { content: "✓"; color: var(--accent); font-size: 14px; }
+  .note {
+    margin-top: 18px; font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.08em;
+  }
+
+  /* CONTACT */
+  .contact-grid {
+    display:grid; grid-template-columns: 1.4fr 1fr;
+    gap: 60px;
+  }
+  .contact-table {
+    border-top: 1px solid var(--rule);
+  }
+  .contact-row {
+    display:grid; grid-template-columns: 140px 1fr;
+    border-bottom: 1px solid var(--rule-soft);
+    padding: 18px 0;
+    align-items: baseline;
+  }
+  .contact-row h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    color: var(--accent-hot);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .contact-row p, .contact-row a {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-variation-settings: "wdth" 90;
+    font-weight: 500;
+    font-size: 26px;
+    text-decoration: none;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .contact-row a:hover { color: var(--accent); }
+  .contact-row p .small {
+    display:block; font-family: 'Newsreader', serif; font-style: italic;
+    font-weight: 400; font-size: 14px; color: var(--ink-mute);
+    margin-top: 4px; line-height: 1.4;
+  }
+
+  .contact-side {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 36px;
+    display:flex; flex-direction: column; justify-content: space-between;
+    position: relative;
+  }
+  .contact-side .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent-hot);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .contact-side h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-variation-settings: "wdth" 85;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 1; letter-spacing: -0.025em;
+    margin-bottom: 18px;
+  }
+  .contact-side h3 em {
+    font-family: 'Newsreader', serif; font-style: italic; font-weight: 400;
+    color: #ffb38a; font-variation-settings: normal;
+  }
+  .contact-side p { opacity: 0.85; margin-bottom: 24px; }
+  .contact-side .actions { display:flex; gap: 10px; flex-wrap: wrap; }
+  .contact-side .actions .btn { background: transparent; border-color: rgba(250,250,246,0.3); color: var(--bg); }
+  .contact-side .actions .btn:hover { background: var(--bg); color: var(--ink); }
+  .contact-side .actions .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  /* INTERPRETERS */
+  .interp-grid {
+    display:grid; grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--rule);
+  }
+  .interp-card {
+    padding: 44px 36px;
+    border-right: 1px solid var(--rule);
+    position: relative;
+  }
+  .interp-card:last-child { border-right: 0; }
+  .interp-card.dark { background: var(--ink); color: var(--bg); }
+  .interp-card .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent-hot);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    display: flex; justify-content: space-between;
+  }
+  .interp-card.dark .label { color: #ffb38a; }
+  .interp-card h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-variation-settings: "wdth" 85;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin-bottom: 18px;
+  }
+  .interp-card p { margin-bottom: 26px; font-size: 16px; }
+  .interp-card.dark p { color: rgba(250,250,246,0.78); }
+  .interp-card.dark .btn { background: transparent; border-color: rgba(250,250,246,0.3); color: var(--bg); }
+  .interp-card.dark .btn:hover { background: var(--bg); color: var(--ink); }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 60px 0 22px;
+    background: var(--bg);
+  }
+  footer .container { display:grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+  footer h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-variation-settings: "wdth" 80;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin-bottom: 14px;
+  }
+  footer .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent-hot);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  footer p { color: var(--ink-soft); margin-bottom: 4px; font-size: 15.5px; }
+  footer .copy {
+    grid-column: 1 / -1;
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 18px;
+    margin-top: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display:flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+
+  @media (max-width: 880px) {
+    .nav-grid { grid-template-columns: 1fr auto; }
+    .nav-mid { display: none; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .phrases { grid-template-columns: 1fr 1fr; }
+    .phrases .rail { display: none; }
+    .ph { border-bottom: 1px solid var(--rule-soft); }
+    .stats { grid-template-columns: 1fr; }
+    .stat { border-right: 0; border-bottom: 1px solid var(--rule-soft); }
+    .sec-head { grid-template-columns: 1fr; }
+    .services, .standards, .trust, .about-block, .contact-grid, .interp-grid, footer .container { grid-template-columns: 1fr; }
+    .svc, .std, .trust div, .interp-card { border-right: 0; border-bottom: 1px solid var(--rule-soft); }
+    .svc:last-child, .std:last-child, .trust div:last-child, .interp-card:last-child { border-bottom: 0; }
+    .contact-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span class="live">Live · Now serving California &amp; beyond</span>
+      <span>Index / 2026 — Lan Do &amp; Associates / Language Services</span>
+      <span>Alameda · 37.7° N, 122.3° W</span>
+    </div>
+  </div>
+  <nav class="main">
+    <div class="container nav-grid">
+      <a href="#hero" class="nav-brand"><img src="images/lda-logo.svg" alt="Lan Do &amp; Associates"></a>
+      <ul class="nav-mid">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#standards">Standards</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#interpreters">Interpreters</a></li>
+      </ul>
+      <div class="nav-end">
+        <a href="#contact" class="btn primary">Request <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-meta">
+          <span class="label">01 / Index</span>
+          Language services<br>
+          since 1993<br>
+          <strong>Alameda, California — Bay Area based, supporting clients beyond.</strong>
+        </div>
+        <div class="hero-center">
+          <div class="num">001 — Front matter</div>
+          <h1>Built<br>for <span class="italic">clarity,</span><br>under pressure.</h1>
+          <p class="lede"><strong>Lan Do &amp; Associates</strong> — interpretation, translation, and transcription for healthcare, legal, government, education, and business. 70+ languages, 500+ vetted linguists.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn primary">Request services <span class="arrow">→</span></a>
+            <a href="#interpreters" class="btn">Join the network</a>
+          </div>
+        </div>
+        <div class="hero-meta">
+          <span class="label">02 / Coverage</span>
+          70+ languages<br>
+          500+ linguists<br>
+          <strong>Healthcare, legal, government, education, business — on site, by phone, in writing.</strong>
+        </div>
+      </div>
+
+      <div class="phrases">
+        <div class="rail">YES · WE SPEAK YOUR LANGUAGE</div>
+        <div class="ph">
+          <div class="tag"><span>KO / 한국어</span><span>01</span></div>
+          <div class="native">물론입니다, 저희는 한국어를 합니다</div>
+          <div class="gloss">Yes, we can speak your language.</div>
+        </div>
+        <div class="ph">
+          <div class="tag"><span>VI / Tiếng Việt</span><span>02</span></div>
+          <div class="native">Dạ đúng, chúng tôi nói được quý ngôn ngữ!</div>
+          <div class="gloss">Yes, we can speak your language.</div>
+        </div>
+        <div class="ph">
+          <div class="tag"><span>TR / Türkçe</span><span>03</span></div>
+          <div class="native">Evet, sizin dilinizi konuşabiliyoruz!</div>
+          <div class="gloss">Yes, we can speak your language.</div>
+        </div>
+        <div class="ph">
+          <div class="tag"><span>ES / Español</span><span>04</span></div>
+          <div class="native">Sí, podemos hablar su idioma!</div>
+          <div class="gloss">Yes, we can speak your language.</div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="ix">METRIC / 01</div>
+          <div class="num">70<em>+</em></div>
+          <div class="label">Languages spoken across our linguist network.</div>
+        </div>
+        <div class="stat">
+          <div class="ix">METRIC / 02</div>
+          <div class="num">500<em>+</em></div>
+          <div class="label">Vetted, professional interpreters &amp; translators.</div>
+        </div>
+        <div class="stat">
+          <div class="ix">METRIC / 03</div>
+          <div class="num">33<em>yr</em></div>
+          <div class="label">Continuous practice — independent &amp; family-owned.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="sec-head">
+        <div class="num">§ 01 / Services</div>
+        <h2>What we <em>do.</em></h2>
+        <div class="descr"><span class="mono">Scope of work</span>Three core service lines, supporting the rooms where understanding matters.</div>
+      </div>
+      <div class="services">
+        <div class="svc">
+          <div class="meta"><span class="num">/ 01</span><span>Real-time</span></div>
+          <div class="ico"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H10l-4 4V8a2 2 0 0 1 2-2z"/><path d="M18 6h8a2 2 0 0 1 2 2v8"/><path d="M22 18l4 4"/></svg></div>
+          <h3>Interpretation</h3>
+          <p>In-person, telephonic, consecutive, and simultaneous interpretation for healthcare, legal, government, education, and business settings.</p>
+          <div class="footnote">→ On site · phone · video</div>
+        </div>
+        <div class="svc">
+          <div class="meta"><span class="num">/ 02</span><span>Written</span></div>
+          <div class="ico"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8h16v8"/><path d="M8 16h16v8"/><path d="M12 8l-4 4 4 4"/><path d="M20 24l4-4-4-4"/></svg></div>
+          <h3>Translation &amp; transcription</h3>
+          <p>Written translation and accurate transcription for legal documents, consent forms, publications, research studies, and multilingual communications.</p>
+          <div class="footnote">→ Legal · medical · research</div>
+        </div>
+        <div class="svc">
+          <div class="meta"><span class="num">/ 03</span><span>Reach</span></div>
+          <div class="ico"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4a12 12 0 1 0 0 24 12 12 0 0 0 0-24z"/><path d="M4 16h24"/><path d="M16 4c3 3.2 4.5 7.2 4.5 12S19 24.8 16 28"/><path d="M16 4c-3 3.2-4.5 7.2-4.5 12S13 24.8 16 28"/></svg></div>
+          <h3>Languages &amp; coverage</h3>
+          <p>Services in 70+ languages through a network of 500+ linguists, Bay Area based and supporting clients across California and beyond.</p>
+          <div class="footnote">→ California &amp; beyond</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="sec-head">
+        <div class="num">§ 02 / About</div>
+        <h2>Founded <em>1993.</em><br>Built to last.</h2>
+        <div class="descr"><span class="mono">A brief history</span>A family business in the Bay Area, doing one thing well for more than three decades.</div>
+      </div>
+      <div class="about-block">
+        <div class="index">
+          <span>2.1 — Origin / 1993</span>
+          <span>2.2 — Practice / Healthcare · Legal · Gov · EDU · Biz</span>
+          <span>2.3 — Roots / Vietnamese immigrants, Bay Area</span>
+          <span>2.4 — Coverage / California &amp; beyond</span>
+          <span class="accent">// Updated annually.</span>
+        </div>
+        <div class="body">
+          <p>Founded in 1993 by Vietnamese immigrants in the Bay Area, <strong>Lan Do &amp; Associates</strong> was built to help organizations bridge communication across languages and cultures with care, accuracy, and professionalism.</p>
+          <div class="pull">"Help people understand and be understood, in the moments that matter most."</div>
+          <p>For more than three decades, we have supported healthcare, legal, government, education, and business communities with interpretation, translation, and transcription services grounded in cultural understanding, confidentiality, and reliability.</p>
+          <p>Our work remains practical and service-focused: matching clients with qualified linguists, protecting sensitive communications, and helping people understand and be understood in important settings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="standards">
+    <div class="container">
+      <div class="sec-head">
+        <div class="num">§ 03 / Standards</div>
+        <h2>A standard, <em>kept.</em></h2>
+        <div class="descr"><span class="mono">Operating principles</span>How we hire, how we work, how we hand off the finished product.</div>
+      </div>
+      <div class="standards">
+        <div class="std">
+          <div class="meta"><span>STANDARD</span><span>01</span></div>
+          <div class="num">01</div>
+          <h3>Qualified linguists</h3>
+          <p>Experienced interpreters and translators support healthcare, legal, government, education, and business settings. Many hold federal, state, or professional certifications.</p>
+        </div>
+        <div class="std">
+          <div class="meta"><span>STANDARD</span><span>02</span></div>
+          <div class="num">02</div>
+          <h3>Accuracy &amp; confidentiality</h3>
+          <p>Our linguists emphasize professionalism, cultural competence, accuracy, confidentiality, and discretion when handling sensitive communications.</p>
+        </div>
+        <div class="std">
+          <div class="meta"><span>STANDARD</span><span>03</span></div>
+          <div class="num">03</div>
+          <h3>Translation expertise</h3>
+          <p>Translation and transcription support includes legal documents, consent forms, research studies, publications, websites, business materials, and official records.</p>
+        </div>
+      </div>
+      <div class="trust">
+        <div>WRMSDC Minority-Owned</div>
+        <div>CA DGS Small Business</div>
+        <div>Woman-Owned Business</div>
+      </div>
+      <p class="note">// Licensing &amp; certification information available upon request.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="sec-head">
+        <div class="num">§ 04 / Contact</div>
+        <h2>Reach <em>us.</em></h2>
+        <div class="descr"><span class="mono">Quick paths in</span>By phone, email, or visit. Service requests handled directly.</div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-table">
+          <div class="contact-row">
+            <h3>Phone</h3>
+            <p><a href="tel:5107489200">(510) 748-9200</a><span class="small">Fax (510) 748-9201</span></p>
+          </div>
+          <div class="contact-row">
+            <h3>Office</h3>
+            <p>2171 Harbor Bay Pkwy<span class="small">Alameda, CA 94502</span></p>
+          </div>
+          <div class="contact-row">
+            <h3>General</h3>
+            <p><a href="mailto:lda@landoassociates.com">lda@landoassociates.com</a><span class="small">For general inquiries.</span></p>
+          </div>
+          <div class="contact-row">
+            <h3>Requests</h3>
+            <p><a href="mailto:request@landoassociates.com">request@landoassociates.com</a><span class="small">For service requests.</span></p>
+          </div>
+        </div>
+        <div class="contact-side">
+          <div>
+            <div class="label">// Begin a request</div>
+            <h3>The fastest way to a <em>linguist.</em></h3>
+            <p>Tell us the language, the setting, and the timing. We'll match you with the right person from our network.</p>
+          </div>
+          <div class="actions">
+            <a href="mailto:request@landoassociates.com?subject=Language%20Service%20Request" class="btn primary">Email request <span class="arrow">→</span></a>
+            <a href="tel:5107489200" class="btn">Call now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="interpreters">
+    <div class="container">
+      <div class="sec-head">
+        <div class="num">§ 05 / Interpreters</div>
+        <h2>Join the <em>network.</em></h2>
+        <div class="descr"><span class="mono">For linguists</span>New applicants and existing contractors — pick your path.</div>
+      </div>
+      <div class="interp-grid">
+        <div class="interp-card">
+          <div class="label"><span>// New applicants</span><span>01</span></div>
+          <h3>Apply to the<br>interpreter &amp; translator network</h3>
+          <p>We are always seeking qualified interpreters and translators to join our network for healthcare, legal, government, education, and business assignments.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfk2ld4udmyAiZyAooYPItrn4d4j7B79KW3KsI2pXM8wg9hqA/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="btn primary">Apply now <span class="arrow">→</span></a>
+        </div>
+        <div class="interp-card dark">
+          <div class="label"><span>// Existing contractors</span><span>02</span></div>
+          <h3>Contractor<br>portal access</h3>
+          <p>Existing contractors may access the contractor portal to review assignments, submit invoices, and update credentials.</p>
+          <a href="https://contractor.hipaa-health.com/login" target="_blank" rel="noopener noreferrer" class="btn">Enter portal <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div>
+        <div class="label">// Office</div>
+        <h3>Lan Do &amp;<br>Associates, LLC</h3>
+        <p>2171 Harbor Bay Parkway</p>
+        <p>Alameda, CA 94502</p>
+      </div>
+      <div>
+        <div class="label">// Phone</div>
+        <p>(510) 748-9200</p>
+        <p>Fax (510) 748-9201</p>
+      </div>
+      <div>
+        <div class="label">// Email</div>
+        <p>lda@landoassociates.com</p>
+        <p>request@landoassociates.com</p>
+      </div>
+      <div>
+        <div class="label">// Practice</div>
+        <p>70+ languages</p>
+        <p>500+ linguists</p>
+        <p>California &amp; beyond</p>
+      </div>
+      <div class="copy">
+        <span>© 1993 – 2026 Lan Do &amp; Associates, LLC</span>
+        <span>Set in Bricolage Grotesque, Newsreader &amp; JetBrains Mono</span>
+        <span>All rights reserved</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
