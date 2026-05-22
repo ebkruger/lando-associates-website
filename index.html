@@ -94,6 +94,8 @@
   }
   .nav-links a:hover::after { transform: scaleX(1); }
   .nav-cta { display:flex; gap: 10px; }
+  .nav-toggle { display: none; }
+  .nav-burger { display: none; }
 
   .btn {
     display:inline-flex; align-items: center; gap: 10px;
@@ -714,7 +716,53 @@
   }
 
   @media (max-width: 960px) {
-    .nav-links { display: none; }
+    .nav-inner { position: relative; }
+    .nav-brand svg { height: 44px; }
+    .nav-cta { display: none; }
+    .nav-burger {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      width: 30px; height: 30px;
+      cursor: pointer;
+      padding: 0;
+    }
+    .nav-burger span {
+      display: block;
+      height: 2px;
+      background: var(--ink);
+      width: 100%;
+      transition: transform 220ms ease, opacity 220ms ease;
+      transform-origin: center;
+    }
+    .nav-toggle:checked ~ .nav-burger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-toggle:checked ~ .nav-burger span:nth-child(2) { opacity: 0; }
+    .nav-toggle:checked ~ .nav-burger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      background: var(--paper);
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 4px 0;
+      box-shadow: 0 18px 30px -20px rgba(28,36,23,0.18);
+    }
+    .nav-toggle:checked ~ .nav-links { display: flex; }
+    .nav-links li { padding: 0 5vw; }
+    .nav-links a {
+      display: block;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line-soft);
+      font-size: 16px;
+    }
+    .nav-links li:last-child a { border-bottom: 0; }
+    .nav-links a::after { display: none; }
+
     .topbar-inner { font-size: 12.5px; }
     .topbar-inner .left .badge { display: none; }
     .stats-inner, .services, .standards, .contact-grid, .interp, footer .container { grid-template-columns: 1fr; }
@@ -729,6 +777,81 @@
     .phrase:nth-child(1), .phrase:nth-child(2) { border-top: 0; }
     .contact-row { grid-template-columns: 1fr; gap: 6px; }
     .trust .items { gap: 18px; }
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 64px 0; }
+    .hero { padding: 52px 0 56px; }
+    .hero h1 { font-size: clamp(34px, 9vw, 46px); margin-bottom: 22px; }
+    .hero .lede { font-size: 17.5px; margin-bottom: 28px; }
+    .hero-cta { flex-direction: column; align-items: stretch; gap: 10px; margin-bottom: 40px; }
+    .hero-cta .btn { justify-content: center; padding: 14px 18px; }
+    .hero-eyebrow { font-size: 11.5px; letter-spacing: 0.14em; margin-bottom: 20px; }
+    .hero-eyebrow::before, .hero-eyebrow::after { width: 20px; }
+
+    .phrases-book { padding: 28px 18px 22px; }
+    .phrases-head .label { font-size: 11px; letter-spacing: 0.16em; }
+    .phrases-head .title { font-size: 21px; }
+    .phrases { grid-template-columns: 1fr; gap: 0; }
+    .phrase { padding: 16px 0; text-align: center; }
+    .phrase:nth-child(2) { border-top: 1px solid var(--line); }
+
+    .topbar-inner .left { display: none; }
+    .topbar-inner { justify-content: center; }
+    .topbar-inner .right { gap: 18px; font-size: 12px; }
+    .topbar-inner .right a:last-child { display: none; }
+
+    .stats-inner { padding: 28px 0; }
+    .stat .num { font-size: 46px; }
+    .stat .label { font-size: 13.5px; }
+
+    .daily-strip p { font-size: 15px; }
+    .daily-strip strong { font-size: 13px; letter-spacing: 0.08em; }
+
+    .sec-head { margin-bottom: 40px; }
+    .section-title { font-size: clamp(28px, 7.5vw, 38px); }
+    .section-sub { font-size: 17px; }
+    .eyebrow { font-size: 11.5px; letter-spacing: 0.16em; margin-bottom: 16px; }
+    .eyebrow::before, .eyebrow::after { width: 20px; }
+
+    .services, .standards { gap: 18px; }
+    .svc { padding: 30px 22px; }
+    .svc h3 { font-size: 23px; }
+    .standards { margin-bottom: 36px; }
+    .standard h3 { font-size: 21px; }
+
+    .about p { font-size: 18px; }
+    .about p:first-of-type::first-letter { font-size: 58px; padding-top: 6px; padding-right: 10px; }
+    .about .divider { margin: 26px 0; }
+    .about .divider::before, .about .divider::after { width: 40px; }
+
+    .clients-block { margin-top: 44px; padding-top: 36px; }
+    .clients-block .title { font-size: 19px; margin-bottom: 28px; }
+    .client .years { font-size: 32px; }
+    .client .name { font-size: 13px; }
+
+    .trust { padding: 22px 18px; }
+    .trust .items { gap: 14px 22px; flex-direction: column; align-items: center; }
+
+    .contact-table { padding: 30px 22px; }
+    .contact-table h3 { font-size: 24px; }
+    .contact-row { padding: 16px 0; }
+    .contact-row h4 { font-size: 15px; }
+    .contact-row p, .contact-row a { font-size: 16px; }
+
+    .contact-side { padding: 36px 24px; }
+    .contact-side h3 { font-size: 28px; }
+    .contact-side p { font-size: 16.5px; margin-bottom: 24px; }
+    .contact-side .actions { flex-direction: column; align-items: stretch; }
+    .contact-side .actions .btn { justify-content: center; padding: 14px 18px; }
+
+    .interp-card { padding: 36px 24px; }
+    .interp-card h3 { font-size: 25px; }
+    .interp-card p { margin-bottom: 22px; }
+
+    footer { padding: 48px 0 24px; }
+    footer .container { gap: 28px; }
+    footer .copy { flex-direction: column; gap: 6px; font-size: 12.5px; text-align: center; }
   }
 </style>
 </head>
@@ -757,6 +880,10 @@
   <nav class="main">
     <div class="container nav-inner">
       <a href="#hero" class="nav-brand" aria-label="Lan Do &amp; Associates"><svg role="img" aria-label="Lan Do &amp; Associates"><use href="#lda-logo"/></svg></a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="nav-burger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </label>
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
@@ -1042,5 +1169,13 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.querySelectorAll('.nav-links a').forEach(function(a){
+      a.addEventListener('click', function(){
+        var t = document.getElementById('nav-toggle');
+        if (t) t.checked = false;
+      });
+    });
+  </script>
 </body>
 </html>
