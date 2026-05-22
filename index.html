@@ -96,6 +96,7 @@
   .nav-cta { display:flex; gap: 10px; }
   .nav-toggle { display: none; }
   .nav-burger { display: none; }
+  .nav-links .cta-li { display: none; }
 
   .btn {
     display:inline-flex; align-items: center; gap: 10px;
@@ -246,11 +247,11 @@
     border-bottom: 1px solid var(--line);
   }
   .stats-inner {
-    display:grid; grid-template-columns: repeat(3, 1fr);
+    display:grid; grid-template-columns: repeat(4, 1fr);
     padding: 44px 0;
   }
   .stat {
-    padding: 0 32px;
+    padding: 0 22px;
     text-align: center;
     border-right: 1px solid var(--line);
   }
@@ -258,7 +259,7 @@
   .stat .num {
     font-family: 'Newsreader', serif;
     font-weight: 400;
-    font-size: 60px;
+    font-size: 54px;
     line-height: 1; letter-spacing: -0.022em;
     color: var(--forest);
   }
@@ -271,55 +272,7 @@
     font-family: 'Newsreader', serif;
   }
 
-  /* DAILY VOLUME STRIP */
-  .daily-strip {
-    background: var(--paper-3);
-    border-bottom: 1px solid var(--line);
-    padding: 18px 0;
-    text-align: center;
-  }
-  .daily-strip p {
-    font-family: 'Newsreader', serif;
-    font-style: italic;
-    color: var(--ink-soft);
-    font-size: 17px;
-  }
-  .daily-strip strong {
-    color: var(--forest);
-    font-weight: 400;
-    font-style: normal;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 15.5px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin-right: 12px;
-    border-right: 1px solid var(--line);
-    padding-right: 14px;
-  }
-
   /* CLIENTS */
-  .clients-block {
-    margin-top: 56px;
-    padding-top: 48px;
-    border-top: 1px solid var(--line);
-    text-align: center;
-  }
-  .clients-block .label {
-    font-size: 12.5px;
-    color: var(--forest);
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 12px;
-  }
-  .clients-block .title {
-    font-family: 'Newsreader', serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 24px;
-    color: var(--ink);
-    margin-bottom: 36px;
-  }
   .clients {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -327,28 +280,37 @@
   }
   .client {
     padding: 0 14px;
+    text-align: center;
     border-left: 1px solid var(--line);
   }
   .client:first-child { border-left: 0; }
   .client .years {
     font-family: 'Newsreader', serif;
     font-weight: 400;
-    font-size: 40px;
+    font-size: 56px;
     line-height: 1;
     letter-spacing: -0.02em;
     color: var(--forest);
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
   .client .years em { font-style: italic; color: var(--gold); }
-  .client .name {
+  .client .years-label {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
     font-size: 14px;
+    color: var(--gold);
+    margin-bottom: 14px;
+    letter-spacing: 0.04em;
+  }
+  .client .name {
+    font-size: 14.5px;
     font-weight: 500;
     color: var(--ink-soft);
     line-height: 1.35;
   }
 
   /* SECTION */
-  section { padding: 110px 0; border-bottom: 1px solid var(--line); }
+  section { padding: 88px 0; border-bottom: 1px solid var(--line); }
   .sec-head {
     text-align: center;
     max-width: 760px;
@@ -523,15 +485,19 @@
     margin-bottom: 14px;
   }
   .trust .items {
-    display:flex; gap: 36px; justify-content: center; flex-wrap: wrap;
+    display:flex; gap: 12px; justify-content: center; flex-wrap: wrap;
   }
   .trust .item {
-    display:flex; align-items: center; gap: 10px;
-    font-size: 14.5px; font-weight: 500;
+    display:inline-flex; align-items: center; gap: 8px;
+    font-size: 13.5px; font-weight: 500;
     color: var(--ink);
+    padding: 8px 16px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--paper);
   }
   .trust .item::before {
-    content: "✦"; color: var(--gold); font-size: 16px;
+    content: "✦"; color: var(--gold); font-size: 14px;
   }
   .note { text-align: center; font-style: italic; color: var(--ink-mute); margin-top: 18px; font-size: 14px; }
 
@@ -768,12 +734,24 @@
     .topbar-inner { font-size: 12.5px; }
     .topbar-inner .left .badge { display: none; }
     .stats-inner, .services, .standards, .contact-grid, .interp, footer .container { grid-template-columns: 1fr; }
-    .clients { grid-template-columns: 1fr 1fr; }
-    .client { border-left: 0; border-top: 1px solid var(--line); padding: 18px 0; }
-    .client:nth-child(1), .client:nth-child(2) { border-top: 0; }
-    .daily-strip strong { display: block; border-right: 0; padding-right: 0; margin-right: 0; margin-bottom: 6px; }
+    .clients { grid-template-columns: 1fr; }
+    .client { border-left: 0; border-top: 1px solid var(--line); padding: 22px 0; }
+    .client:first-child { border-top: 0; padding-top: 0; }
     .stat { border-right: 0; border-bottom: 1px solid var(--line); padding: 18px 0; }
     .stat:last-child { border-bottom: 0; }
+
+    .nav-links .cta-li { display: block; padding: 12px 5vw 6px; }
+    .nav-links .cta-li a {
+      background: var(--forest);
+      color: #fff;
+      text-align: center;
+      padding: 13px 18px;
+      border-radius: 2px;
+      border-bottom: 0;
+      display: block;
+      font-weight: 600;
+    }
+    .nav-links .cta-li a:hover { background: var(--forest-deep); }
     .phrases { grid-template-columns: 1fr 1fr; gap: 24px; }
     .phrase { border-left: 0; border-top: 1px solid var(--line); padding: 16px 0; }
     .phrase:nth-child(1), .phrase:nth-child(2) { border-top: 0; }
@@ -799,16 +777,13 @@
     .phrase:nth-child(2) { border-top: 1px solid var(--line); }
 
     .topbar-inner .left { display: none; }
-    .topbar-inner { justify-content: center; }
+    .topbar-inner { justify-content: flex-end; }
     .topbar-inner .right { gap: 18px; font-size: 12px; }
     .topbar-inner .right a:last-child { display: none; }
 
     .stats-inner { padding: 28px 0; }
-    .stat .num { font-size: 46px; }
+    .stat .num { font-size: 42px; }
     .stat .label { font-size: 13.5px; }
-
-    .daily-strip p { font-size: 15px; }
-    .daily-strip strong { font-size: 13px; letter-spacing: 0.08em; }
 
     .sec-head { margin-bottom: 40px; }
     .section-title { font-size: clamp(28px, 7.5vw, 38px); }
@@ -827,13 +802,13 @@
     .about .divider { margin: 26px 0; }
     .about .divider::before, .about .divider::after { width: 40px; }
 
-    .clients-block { margin-top: 44px; padding-top: 36px; }
-    .clients-block .title { font-size: 19px; margin-bottom: 28px; }
-    .client .years { font-size: 32px; }
-    .client .name { font-size: 13px; }
+    .client .years { font-size: 42px; }
+    .client .years-label { font-size: 13px; margin-bottom: 8px; }
+    .client .name { font-size: 14px; }
 
-    .trust { padding: 22px 18px; }
-    .trust .items { gap: 14px 22px; flex-direction: column; align-items: center; }
+    .trust { padding: 22px 18px; text-align: left; }
+    .trust .label { text-align: left; }
+    .trust .items { gap: 12px; flex-direction: column; align-items: flex-start; }
 
     .contact-table { padding: 30px 22px; }
     .contact-table h3 { font-size: 24px; }
@@ -889,9 +864,11 @@
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#clients">Clients</a></li>
         <li><a href="#standards">Standards</a></li>
         <li><a href="#interpreters">Linguists</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li class="cta-li"><a href="#contact">Request services</a></li>
       </ul>
       <div class="nav-cta">
         <a href="#contact" class="btn primary">Request services</a>
@@ -952,12 +929,10 @@
         <div class="num">33<em>+</em></div>
         <div class="label">years of continuous practice</div>
       </div>
-    </div>
-  </div>
-
-  <div class="daily-strip">
-    <div class="container">
-      <p><strong>Daily volume</strong>Filling hundreds of requests a day across 20+ active languages.</p>
+      <div class="stat">
+        <div class="num">200<em>+</em></div>
+        <div class="label">requests filled each day in 20+ languages</div>
+      </div>
     </div>
   </div>
 
@@ -983,7 +958,7 @@
         </div>
         <div class="svc">
           <div class="roman">— iii —</div>
-          <div class="ico"><svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4v18"/><rect x="11" y="4" width="10" height="18" rx="5"/><path d="M8 18a8 8 0 0 0 16 0"/><path d="M16 26v4"/><path d="M12 30h8"/></svg></div>
+          <div class="ico"><svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="24" height="18" rx="2"/><path d="M13 12l6 3-6 3z" fill="currentColor" stroke="none"/><path d="M10 28h12"/></svg></div>
           <h3>Voiceover &amp; Subtitles</h3>
           <p>Native-voice voiceover, dubbing, and accurate multilingual subtitling for training videos, broadcast, educational media, and corporate communications.</p>
         </div>
@@ -998,29 +973,37 @@
         <h2 class="section-title">A family firm with a <em>long memory.</em></h2>
       </div>
       <div class="about">
-        <p>Founded in 1993 by Vietnamese immigrants in the Bay Area, Lan Do &amp; Associates was built to help organizations bridge communication across languages and cultures with care, accuracy, and professionalism.</p>
+        <p>Founded in 1993 by Vietnamese refugees in the Bay Area, Lan Do &amp; Associates was built to help organizations bridge communication across languages and cultures with care, accuracy, and professionalism.</p>
         <div class="divider"><span>✦</span></div>
         <p>For more than three decades we have continuously served healthcare, legal, government, education, community organizations and businesses with interpretation, translation, and transcription services grounded in cultural understanding, confidentiality, and reliability.</p>
         <div class="divider"><span>✦</span></div>
         <p>Our work remains practical and service-focused: matching clients with qualified linguists, protecting sensitive communications, and helping people understand and be understood in important settings.</p>
       </div>
+    </div>
+  </section>
 
-      <div class="clients-block">
-        <div class="label">— Long-running engagements —</div>
-        <div class="title">"Trusted, year after year, by the institutions we serve."</div>
-        <div class="clients">
-          <div class="client">
-            <div class="years">33<em>+</em></div>
-            <div class="name">California Dept. of Disability</div>
-          </div>
-          <div class="client">
-            <div class="years">30<em>+</em></div>
-            <div class="name">Kaiser Permanente</div>
-          </div>
-          <div class="client">
-            <div class="years">28<em>+</em></div>
-            <div class="name">Social Security Administration</div>
-          </div>
+  <section id="clients">
+    <div class="container">
+      <div class="sec-head">
+        <div class="eyebrow">Long-running engagements</div>
+        <h2 class="section-title">Trusted, <em>year after year.</em></h2>
+        <p class="section-sub">Decades of continuous service to the institutions we partner with.</p>
+      </div>
+      <div class="clients">
+        <div class="client">
+          <div class="years">33<em>+</em></div>
+          <div class="years-label">years</div>
+          <div class="name">California Dept. of Disability</div>
+        </div>
+        <div class="client">
+          <div class="years">30<em>+</em></div>
+          <div class="years-label">years</div>
+          <div class="name">Kaiser Permanente</div>
+        </div>
+        <div class="client">
+          <div class="years">28<em>+</em></div>
+          <div class="years-label">years</div>
+          <div class="name">Social Security Administration</div>
         </div>
       </div>
     </div>
@@ -1160,6 +1143,7 @@
         <ul>
           <li><a href="#services">Services</a></li>
           <li><a href="#about">About</a></li>
+          <li><a href="#clients">Clients</a></li>
           <li><a href="#standards">Standards</a></li>
           <li><a href="#interpreters">Linguists</a></li>
           <li><a href="#contact">Contact</a></li>
