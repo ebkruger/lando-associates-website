@@ -166,10 +166,7 @@
   .screen-actions span { font-size: 13.5px; font-weight: 500; padding: 7px 14px; border-radius: 3px; border: 1px solid var(--line); color: var(--ink-soft); background: #fff; }
   .screen-actions span.go { background: var(--forest); border-color: var(--forest); color: #fff; }
   figure.shot { margin-top: 22px; }
-  /* Screenshots are 16:9 full-window browser captures (2000 x 1125 units); show only the 834 x 404 region at (583, 128) holding the portal header and consent card. */
-  figure.shot .crop { aspect-ratio: 834 / 404; overflow: hidden; border: 1px solid var(--line); border-radius: 2px; background: #fff; }
-  figure.shot img { display: block; width: 239.8%; max-width: none; height: auto; margin-left: -69.9%; margin-top: -15.35%; }
-  figcaption a { color: var(--forest); }
+  figure.shot img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 2px; background: #fff; }
   figcaption, .caption { font-size: 13.5px; color: var(--ink-mute); margin-top: 10px; line-height: 1.55; }
 
   /* FOOTER */
@@ -314,14 +311,14 @@
             <div class="screen-actions"><span class="go">Confirm</span><span>No thanks</span></div>
           </div>
         </div>
-        <p class="caption">The consent language as it appears in the portal. The interpreter’s own mobile number appears in place of (XXX) XXX-XXXX. The links go to our <a href="/privacy/">Privacy Policy</a> and <a href="/privacy/#text-messaging-terms">Text Messaging Terms</a>.</p>
+        <p class="caption">The consent language as it appears in the portal. The interpreter’s own mobile number appears in place of (XXX) XXX-XXXX, and it is covered in the screenshots below. The links go to our <a href="/privacy/">Privacy Policy</a> and <a href="/privacy/#text-messaging-terms">Text Messaging Terms</a>.</p>
         <figure class="shot">
-          <div class="crop"><img src="consent-screen.png" alt="Screenshot of the contractor portal showing the Text message updates consent card as it first appears: the Text me assignment updates checkbox is unchecked and the Confirm button is disabled" onerror="this.closest('figure').remove()"></div>
-          <figcaption>The opt-in screen as it first appears in the contractor portal. The checkbox is unchecked, and Confirm is disabled until the interpreter selects it. <a href="consent-screen.png">View the full screenshot</a>, including the portal address.</figcaption>
+          <img src="consent-screen.png" width="1602" height="776" alt="Screenshot of the contractor portal showing the Text message updates consent card as it first appears: the Text me assignment updates checkbox is unchecked and the Confirm button is disabled" onerror="this.closest('figure').remove()">
+          <figcaption>The opt-in screen as it first appears in the contractor portal at contractor.hipaa-health.com. The checkbox is unchecked, and Confirm is disabled until the interpreter selects it.</figcaption>
         </figure>
         <figure class="shot">
-          <div class="crop"><img src="consent-screen-checked.png" alt="Screenshot of the same consent card after the interpreter has selected the Text me assignment updates checkbox, with the Confirm button now enabled" onerror="this.closest('figure').remove()"></div>
-          <figcaption>After the interpreter selects the checkbox, Confirm becomes available. Consent is recorded only when they click it. <a href="consent-screen-checked.png">View the full screenshot</a>.</figcaption>
+          <img src="consent-screen-checked.png" width="1602" height="776" alt="Screenshot of the same consent card after the interpreter has selected the Text me assignment updates checkbox, with the Confirm button now enabled" onerror="this.closest('figure').remove()">
+          <figcaption>After the interpreter selects the checkbox, Confirm becomes available. Consent is recorded only when they click it.</figcaption>
         </figure>
       </div>
 
