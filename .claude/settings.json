@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mktemp /tmp/flow-*)",
+      "Read(//tmp/flow-*)",
+      "Write(//tmp/flow-*)",
+      "Edit(//tmp/flow-*)",
+      "Read(//private/tmp/flow-*)",
+      "Write(//private/tmp/flow-*)",
+      "Edit(//private/tmp/flow-*)"
+    ]
+  }
+}

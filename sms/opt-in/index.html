@@ -4,16 +4,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Text Message Notifications | Lan Do &amp; Associates</title>
-<meta name="description" content="How Lan Do &amp; Associates uses SMS text messages to notify contracted interpreters about assignment offers, confirmations, and reminders, how to opt in, and how to stop.">
-<link rel="canonical" href="https://www.landoassociates.com/sms/">
+<title>How Interpreters Opt In to Text Messages | Lan Do &amp; Associates</title>
+<meta name="description" content="How contracted interpreters consent to SMS text messages from Lan Do &amp; Associates inside our contractor portal, including the exact consent language shown at opt-in.">
+<link rel="canonical" href="https://www.landoassociates.com/sms/opt-in/">
 <meta name="robots" content="index, follow">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lan Do &amp; Associates">
-<meta property="og:title" content="Text Message Notifications | Lan Do &amp; Associates">
-<meta property="og:description" content="How Lan Do &amp; Associates uses SMS text messages to notify contracted interpreters about assignment offers, confirmations, and reminders.">
-<meta property="og:url" content="https://www.landoassociates.com/sms/">
+<meta property="og:title" content="How Interpreters Opt In to Text Messages | Lan Do &amp; Associates">
+<meta property="og:description" content="How contracted interpreters consent to SMS text messages from Lan Do &amp; Associates inside our contractor portal.">
+<meta property="og:url" content="https://www.landoassociates.com/sms/opt-in/">
 
 <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect x="4" y="4" width="56" height="56" fill="%23faf6ee" stroke="%237fbd78" stroke-width="4"/><path d="M20 14V50H48" fill="none" stroke="%23003366" stroke-width="7" stroke-linecap="square" stroke-linejoin="miter"/><path d="M20 14V50H48" fill="none" stroke="%237fbd78" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/></svg>'>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,9 +127,50 @@
   }
   .block p { color: var(--ink-soft); font-size: 16.5px; line-height: 1.7; margin-bottom: 14px; }
   .block p:last-child { margin-bottom: 0; }
+  .block p strong { color: var(--ink); font-weight: 600; }
   .block a { color: var(--forest); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
   .block a:hover { text-decoration-color: var(--forest); }
   .intro p { font-size: 18px; color: var(--ink); }
+
+  /* OPT-IN STEPS */
+  .steps { list-style: none; counter-reset: step; }
+  .steps li {
+    counter-increment: step; position: relative;
+    padding: 0 0 18px 50px; color: var(--ink-soft); line-height: 1.7;
+  }
+  .steps li:last-child { padding-bottom: 0; }
+  .steps li::before {
+    content: counter(step); position: absolute; left: 0; top: 0;
+    width: 32px; height: 32px; border: 1px solid var(--gold); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Newsreader', serif; font-size: 17px; color: var(--forest);
+  }
+  .steps li strong { color: var(--ink); font-weight: 600; }
+
+  /* CONSENT SCREEN */
+  .screen { border: 1px solid var(--line); background: #fff; border-radius: 2px; overflow: hidden; }
+  .screen-bar {
+    background: var(--paper-3); border-bottom: 1px solid var(--line);
+    padding: 9px 16px; font-size: 13px; color: var(--ink-mute); letter-spacing: 0.01em;
+    overflow-wrap: anywhere;
+  }
+  .screen-body { padding: 24px 24px 26px; }
+  .screen-body svg { height: 38px; width: auto; display: block; margin-bottom: 10px; }
+  .screen-body .org { font-weight: 600; color: var(--ink); font-size: 16px; }
+  .screen-body .sub { font-weight: 600; color: var(--ink-soft); font-size: 13.5px; margin-bottom: 14px; }
+  .screen-body p { font-size: 14.5px; line-height: 1.65; color: var(--ink); margin-bottom: 10px; }
+  .screen-body .links { color: var(--forest); }
+  .screen-check { display: flex; align-items: center; gap: 9px; font-size: 14.5px; margin: 14px 0 16px; color: var(--ink); }
+  .screen-check .box { width: 15px; height: 15px; border: 1.5px solid var(--ink-mute); border-radius: 2px; background: #fff; flex: none; }
+  .screen-actions { display: flex; gap: 8px; }
+  .screen-actions span { font-size: 13.5px; font-weight: 500; padding: 7px 14px; border-radius: 3px; border: 1px solid var(--line); color: var(--ink-soft); background: #fff; }
+  .screen-actions span.go { background: var(--forest); border-color: var(--forest); color: #fff; }
+  figure.shot { margin-top: 22px; }
+  /* Screenshots are 16:9 full-window browser captures (2000 x 1125 units); show only the 834 x 404 region at (583, 128) holding the portal header and consent card. */
+  figure.shot .crop { aspect-ratio: 834 / 404; overflow: hidden; border: 1px solid var(--line); border-radius: 2px; background: #fff; }
+  figure.shot img { display: block; width: 239.8%; max-width: none; height: auto; margin-left: -69.9%; margin-top: -15.35%; }
+  figcaption a { color: var(--forest); }
+  figcaption, .caption { font-size: 13.5px; color: var(--ink-mute); margin-top: 10px; line-height: 1.55; }
 
   /* FOOTER */
   footer { background: var(--forest-deep); color: #cfd9c9; padding: 56px 0 26px; }
@@ -176,6 +217,7 @@
     .topbar-inner .right { gap: 18px; font-size: 12px; }
     .topbar-inner .right a:last-child { display: none; }
     .layout { padding: 40px 0 52px; }
+    .screen-body { padding: 20px 18px 22px; }
     footer .container { grid-template-columns: 1fr; gap: 28px; }
     footer .copy { flex-direction: column; gap: 6px; font-size: 12.5px; text-align: center; }
   }
@@ -228,10 +270,10 @@
   <section class="page-hero">
     <div class="container">
       <div class="inner">
-        <div class="crumb"><a href="/">Home</a> &nbsp;/&nbsp; Text Message Notifications</div>
-        <div class="eyebrow">SMS program</div>
-        <h1>Text Message <em>Notifications</em></h1>
-        <p class="lede">How Lan Do &amp; Associates uses SMS text messages to keep contracted interpreters informed about their assignments.</p>
+        <div class="crumb"><a href="/">Home</a> &nbsp;/&nbsp; <a href="/sms/">Text Message Notifications</a> &nbsp;/&nbsp; How you opt in</div>
+        <div class="eyebrow">SMS consent</div>
+        <h1>How interpreters <em>opt in</em></h1>
+        <p class="lede">Where and how contracted interpreters agree to receive text messages from Lan Do &amp; Associates.</p>
       </div>
     </div>
   </section>
@@ -239,32 +281,58 @@
   <div class="container">
     <main class="layout">
       <div class="block intro">
-        <p>Lan Do &amp; Associates sends SMS text messages to contracted interpreters about their assignments. Messages include offers of new assignments, confirmations of booked assignments, and reminders the day before an assignment. We do not send marketing or promotional messages.</p>
+        <p>Lan Do &amp; Associates texts only its own contracted interpreters, and only after each interpreter has opted in. Opt-in happens inside our contractor portal, which requires a sign-in and is not open to the public. This page shows that opt-in screen and the exact consent language, so that it can be reviewed without a portal account.</p>
       </div>
 
       <div class="block">
-        <h2>How you opt in</h2>
-        <p>Interpreters agree to receive these messages inside our contractor portal, by selecting “Text me assignment updates” and clicking Confirm on the text message consent screen. Opting in is voluntary and is not a condition of working with us. Because the portal requires a sign-in, we show the consent screen and its exact wording on our <a href="/sms/opt-in/">How interpreters opt in</a> page.</p>
+        <h2>Who receives messages</h2>
+        <p>Recipients are interpreters who work with Lan Do &amp; Associates as independent contractors. Each one has a contractor agreement with us and an account in our contractor portal at contractor.hipaa-health.com, where they view their assignments. We do not text clients, patients, or the general public, and we do not buy, rent, or import phone lists.</p>
       </div>
 
       <div class="block">
-        <h2>Message frequency</h2>
-        <p>Message frequency varies with your assignment activity. Message and data rates may apply.</p>
+        <h2>The opt-in flow</h2>
+        <ol class="steps">
+          <li><strong>Sign in.</strong> The interpreter signs in to the contractor portal with their own account.</li>
+          <li><strong>Review the request.</strong> The portal shows a “Text message updates” card. It names Lan Do &amp; Associates as the sender, shows the mobile number the texts would go to, describes the messages and how often they are sent, and links to our Privacy Policy and Text Messaging Terms.</li>
+          <li><strong>Choose.</strong> The “Text me assignment updates” checkbox starts unchecked, and the Confirm button stays disabled until the interpreter selects it. To opt in, they select the checkbox and click Confirm. Clicking “No thanks” declines, and no texts are sent.</li>
+          <li><strong>Change your mind any time.</strong> Replying STOP to any message ends the texts immediately. Interpreters can also call or email us to be removed.</li>
+        </ol>
       </div>
 
       <div class="block">
-        <h2>How to stop</h2>
-        <p>Reply STOP to any message to stop receiving texts. You can also contact us at <a href="tel:5107489200">(510) 748-9200</a> or <a href="mailto:lda@landoassociates.com">lda@landoassociates.com</a> to be removed.</p>
+        <h2>What the interpreter sees</h2>
+        <div class="screen" role="img" aria-label="The Text message updates consent card shown in the contractor portal">
+          <div class="screen-bar">contractor.hipaa-health.com</div>
+          <div class="screen-body">
+            <svg viewBox="0 0 420 132" aria-hidden="true"><use href="#lda-logo"/></svg>
+            <div class="org">Lan Do &amp; Associates</div>
+            <div class="sub">Text message updates</div>
+            <p>Lan Do &amp; Associates would like to text assignment confirmations and day-before reminders to (XXX) XXX-XXXX. Expect about one text when you are placed on an assignment and one reminder the day before.</p>
+            <p>Message and data rates may apply. Reply STOP to stop receiving texts or HELP for help. You can also call (510) 748-9200.</p>
+            <p class="links">Privacy Policy · Text Messaging Terms</p>
+            <div class="screen-check"><span class="box"></span> Text me assignment updates</div>
+            <div class="screen-actions"><span class="go">Confirm</span><span>No thanks</span></div>
+          </div>
+        </div>
+        <p class="caption">The consent language as it appears in the portal. The interpreter’s own mobile number appears in place of (XXX) XXX-XXXX. The links go to our <a href="/privacy/">Privacy Policy</a> and <a href="/privacy/#text-messaging-terms">Text Messaging Terms</a>.</p>
+        <figure class="shot">
+          <div class="crop"><img src="consent-screen.png" alt="Screenshot of the contractor portal showing the Text message updates consent card as it first appears: the Text me assignment updates checkbox is unchecked and the Confirm button is disabled" onerror="this.closest('figure').remove()"></div>
+          <figcaption>The opt-in screen as it first appears in the contractor portal. The checkbox is unchecked, and Confirm is disabled until the interpreter selects it. <a href="consent-screen.png">View the full screenshot</a>, including the portal address.</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="crop"><img src="consent-screen-checked.png" alt="Screenshot of the same consent card after the interpreter has selected the Text me assignment updates checkbox, with the Confirm button now enabled" onerror="this.closest('figure').remove()"></div>
+          <figcaption>After the interpreter selects the checkbox, Confirm becomes available. Consent is recorded only when they click it. <a href="consent-screen-checked.png">View the full screenshot</a>.</figcaption>
+        </figure>
       </div>
 
       <div class="block">
-        <h2>Help</h2>
-        <p>Reply HELP to any message, or contact us at <a href="tel:5107489200">(510) 748-9200</a> or <a href="mailto:lda@landoassociates.com">lda@landoassociates.com</a>.</p>
+        <h2>Consent is optional</h2>
+        <p>Agreeing to texts is not a condition of working with Lan Do &amp; Associates. Interpreters who decline still receive their assignments through the portal. Consent covers only the assignment messages described above. We do not send marketing or promotional messages.</p>
       </div>
 
       <div class="block">
-        <h2>Privacy</h2>
-        <p>Your mobile number is used only to communicate about assignments. We do not sell or share mobile numbers or SMS consent with third parties for marketing purposes. See our Privacy Policy at <a href="https://www.landoassociates.com/privacy/">https://www.landoassociates.com/privacy/</a>.</p>
+        <h2>Questions</h2>
+        <p>Full program details are on our <a href="/sms/">Text Message Notifications</a> page and in our <a href="/privacy/">Privacy Policy</a>. You can also reach us at <a href="tel:5107489200">(510) 748-9200</a> or <a href="mailto:lda@landoassociates.com">lda@landoassociates.com</a>.</p>
       </div>
     </main>
   </div>

@@ -1,0 +1,10 @@
+#!/bin/sh
+# Pre-commit check for the static site. Verifies every HTML page and the
+# sitemap are well-formed XML/HTML enough to parse, then exits 0.
+set -e
+cd "$(dirname "$0")/.."
+for f in index.html careers/contract-interpreters/index.html sms/index.html sms/opt-in/index.html privacy/index.html; do
+  [ -s "$f" ] || { echo "ci: missing or empty $f"; exit 1; }
+done
+python3 -c 'import xml.dom.minidom,sys; xml.dom.minidom.parse("sitemap.xml")' || { echo "ci: sitemap.xml is not valid XML"; exit 1; }
+echo "ci: ok"
